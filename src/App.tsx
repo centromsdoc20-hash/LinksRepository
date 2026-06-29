@@ -6,7 +6,7 @@ import {
   FaInstagram, FaFacebook, FaYoutube, FaWhatsapp,
   FaPhone, FaMapMarkerAlt, FaClock, FaLinkedin,
   FaBuilding, FaCreditCard, FaBriefcaseMedical, 
-  FaStar, FaGlobe, FaVideo, FaMapPin, FaEnvelope
+  FaStar, FaGlobe, FaVideo, FaMapPin
 } from 'react-icons/fa';
 import { FiExternalLink, FiMail } from 'react-icons/fi';
 import logo from '../src/assets/apple-touch-icon.png';
@@ -245,22 +245,6 @@ const Nome = styled.h1`
   }
 `;
 
-const Cargo = styled.p`
-  color: ${props => props.theme.primary};
-  font-size: 0.75rem;
-  font-family: ${props => props.theme.fontSecondary};
-  margin: 0.2rem 0;
-  font-weight: 600;
-  text-align: center;
-  
-  @media (min-width: 480px) {
-    font-size: 0.8rem;
-  }
-  
-  @media (min-width: 768px) {
-    font-size: 0.875rem;
-  }
-`;
 
 const Bio = styled.p`
   color: ${props => props.theme.textLight};

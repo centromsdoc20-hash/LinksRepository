@@ -72,8 +72,7 @@ interface ThemeToggleProps {
 
 export const ThemeToggle: React.FC<ThemeToggleProps> = ({ 
   isDark, 
-  onToggle, 
-  primaryColor 
+  onToggle,  
 }) => {
   return (
     <ToggleContainer>
