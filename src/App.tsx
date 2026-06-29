@@ -8,7 +8,7 @@ import {
   FaBuilding, FaCreditCard, FaBriefcaseMedical, 
   FaStar, FaGlobe, FaVideo, FaMapPin
 } from 'react-icons/fa';
-import { FiExternalLink, FiMail } from 'react-icons/fi';
+import { FiExternalLink } from 'react-icons/fi';
 import logo from '../src/assets/apple-touch-icon.png';
 
 const CONFIG = {
@@ -18,7 +18,6 @@ const CONFIG = {
   telefone: '(51) 3500-0714',
   endereco: 'Av. João Corrêa, 683 - Centro, Sapiranga',
   horario: 'Segunda a Sexta: 7h às 21h | Sábados e feriados: 8h às 19h',
-  email: 'contato@centromedicosapiranga.com.br',
   cor: '#0d9488',
   imagemFachada: 'https://centroms.com.br/assets/fachada-B4EfD_BT.jpg',
   logo: logo,
@@ -26,65 +25,64 @@ const CONFIG = {
   links: [
     { 
       titulo: 'Atendimento Geral', 
-      url: '#', 
+      url: 'https://api.whatsapp.com/send?phone=555135000714&text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta.', 
       icone: FaBuilding,
       descricao: 'Agendamento e informações',
       destaque: true
     },
     { 
       titulo: 'Contato', 
-      url: '#', 
+      url: 'tel:5135000714',  // <--- AJUSTADO: agora abre o discador do celular
       icone: FaPhone,
       descricao: 'Fale conosco'
     },
     { 
       titulo: 'Teleconsulta', 
-      url: '#', 
+      url: 'https://api.whatsapp.com/send/?phone=555135000714&text&type=phone_number&app_absent=0', 
       icone: FaVideo,
       descricao: 'Consultas online'
     },
     { 
-      titulo: 'Cartão APF', 
-      url: '#', 
+      titulo: 'Cartões', 
+      url: 'https://api.whatsapp.com/send/?phone=5551993481804&text&type=phone_number&app_absent=0', 
       icone: FaCreditCard,
       descricao: 'Benefícios e descontos'
     },
     { 
       titulo: 'Medicina do Trabalho', 
-      url: '#', 
+      url: 'https://api.whatsapp.com/send/?phone=5551989666385&text&type=phone_number&app_absent=0', 
       icone: FaBriefcaseMedical,
       descricao: 'Saúde ocupacional'
     },
     { 
       titulo: 'Avalie no Google', 
-      url: '#', 
+      url: 'https://www.google.com/search?q=centro+m%C3%A9dico+sapiranga&sca_esv=560664892&sxsrf=AB5stBgiilcJAewBvlJPMTjmdLB6rFgH5A%3A1693243927774&ei=F9rsZO3tLq7t1sQPsJWFuAU&ved=0ahUKEwit1dSW8f-AAxWutpUCHbBKAVcQ4dUDCA8&uact=5&oq=centro+m%C3%A9dico+sapiranga&gs_lp=Eg', 
       icone: FaStar,
       descricao: 'Deixe sua nota'
     },
     { 
       titulo: 'Endereço', 
-      url: '#', 
+      url: 'https://www.google.com/maps/place/Centro+M%C3%A9dico+Sapiranga/@-29.638385,-51.002844,15z/data=!4m6!3m5!1s0x95193f653d179439:0xd3fcf4242b471aad!8m2!3d-29.638385!4d-51.002844!16s%2Fg%2F1vgqf7ps?entry=ttu', 
       icone: FaMapPin,
       descricao: 'Como chegar'
     },
     { 
       titulo: 'Site', 
-      url: '#', 
+      url: 'https://centroms.com.br/', 
       icone: FaGlobe,
       descricao: 'centroms.com.br'
     },
   ],
   
   sociais: [
-    { plataforma: 'instagram', url: '#' },
-    { plataforma: 'facebook', url: '#' },
-    { plataforma: 'youtube', url: '#' },
-    { plataforma: 'whatsapp', url: '#' },
-    { plataforma: 'linkedin', url: '#' },
+    { plataforma: 'instagram', url: 'https://www.instagram.com/centromedicosapiranga/?hl=pt' },
+    { plataforma: 'facebook', url: 'https://www.facebook.com/centromedicosapiranga/?locale=pt_BR' },
+    { plataforma: 'whatsapp', url: 'https://api.whatsapp.com/send?phone=555135000714' },
+    { plataforma: 'linkedin', url: 'https://br.linkedin.com/company/centro-m%C3%A9dico-sapiranga' },
   ]
 };
 
-// ========== ESTILOS MOBILE-FIRST ==========
+
 const Container = styled.div`
   min-height: 100vh;
   padding: 1rem;
@@ -590,7 +588,6 @@ const Footer = styled.div`
   }
 `;
 
-// ========== COMPONENTES DOS ÍCONES SOCIAIS ==========
 const getIcon = (plataforma: string) => {
   const icons: Record<string, any> = {
     instagram: FaInstagram,
@@ -602,7 +599,7 @@ const getIcon = (plataforma: string) => {
   return icons[plataforma] || null;
 };
 
-// ========== APP ==========
+
 function App() {
   const [isDark, setIsDark] = useState(false);
   const theme = isDark ? darkTheme : defaultTheme;
@@ -645,12 +642,6 @@ function App() {
                 <InfoItem>
                   <FaClock />
                   <span>{CONFIG.horario}</span>
-                </InfoItem>
-                <InfoItem>
-                  <FiMail />
-                  <a href={`mailto:${CONFIG.email}`}>
-                    {CONFIG.email}
-                  </a>
                 </InfoItem>
               </InfoGrid>
 
