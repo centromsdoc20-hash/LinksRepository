@@ -32,7 +32,7 @@ const CONFIG = {
     },
     { 
       titulo: 'Contato', 
-      url: 'tel:5135000714',  // <--- AJUSTADO: agora abre o discador do celular
+      url: 'tel:5135000714',  
       icone: FaPhone,
       descricao: 'Fale conosco'
     },
